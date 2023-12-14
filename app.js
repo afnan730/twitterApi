@@ -74,7 +74,7 @@ function getData(req) {
 //     res.status(500).send(e);
 //   }
 // });
-app.post("/tweet", async (req, res) => {
+app.post("/api/tweet", async (req, res) => {
   try {
     validate(req);
     const data = getData(req);
