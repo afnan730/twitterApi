@@ -18,19 +18,19 @@ app.use(cors());
 
 function validate(req) {
   if (!req.body.appKey || req.body.appKey.trim().length == 0) {
-    throw "appKey can't be empty";
+    throw "Consumer key can't be empty";
   }
   if (!req.body.appSecret || req.body.appSecret.trim().length == 0) {
-    throw "appSecret can't be empty";
+    throw "Consumer secret key can't be empty";
   }
   if (!req.body.accessToken || req.body.accessToken.trim().length == 0) {
-    throw "accessToken can't be empty";
+    throw "Access token key can't be empty";
   }
   if (!req.body.accessSecret || req.body.accessSecret.trim().length == 0) {
-    throw "accessSecret can't be empty";
+    throw "Access token secret key can't be empty";
   }
   if (!req.body.bearerToken || req.body.bearerToken.trim().length == 0) {
-    throw "bearerToken can't be empty";
+    throw "Bearer token key can't be empty";
   }
 }
 
@@ -79,8 +79,8 @@ app.post("/api/tweet", async (req, res) => {
     validate(req);
     const data = getData(req);
     await checkIfUserTweeted(data);
-
-    res.send("You have posted successfully");
+    res.send("تم النشر بحمدالله");
+    // res.send("Tweets have been successfully posted");
   } catch (e) {
     console.log("app85" + e);
     res.status(500).send(e ? e : "something went wrong");

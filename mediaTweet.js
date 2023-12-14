@@ -81,7 +81,7 @@ const tweet = async (client, key) => {
       }
     } catch (e) {
       console.log("line70");
-      throw e;
+      throw "تحقق من صحة المفاتيح التي أدخلتها";
     }
   }
   fs.appendFileSync(filepath, key + "\n", function (err) {
