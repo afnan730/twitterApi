@@ -25,4 +25,4 @@ jobs:
           port: "22"
           key: ${{ secrets.SSHKEY }}
           script: |
-            cd /home/thetufan-nodejs/htdocs/nodejs.thetufan.com && npm i && pm2 restart app.js
+            cd /home/thetufan-nodejs/htdocs/nodejs.thetufan.com && npm i && pm2 start app.js
