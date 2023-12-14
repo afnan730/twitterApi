@@ -14,7 +14,7 @@ jobs:
           username: "root"
           port: "22"
           key: ${{ secrets.SSHKEY }}
-          source: "."
+          source: "./"
           target: "/var/www/nodejs"
       - name: Setup and Restart
         uses: appleboy/ssh-action@master
