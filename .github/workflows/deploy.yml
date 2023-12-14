@@ -16,7 +16,7 @@ jobs:
           port: "22"
           key: ${{ secrets.SSHKEY }}
           source: "./"
-          target: "/var/www/nodejs"
+          target: "/home/thetufan-nodejs/htdocs/nodejs.thetufan.com"
       - name: Setup and Restart
         uses: appleboy/ssh-action@master
         with:
@@ -25,4 +25,4 @@ jobs:
           port: "22"
           key: ${{ secrets.SSHKEY }}
           script: |
-            cd /var/www/nodejs && npm i && pm2 restart app.js
+            cd /home/thetufan-nodejs/htdocs/nodejs.thetufan.com && npm i && pm2 restart app.js
