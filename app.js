@@ -18,19 +18,34 @@ app.use(cors());
 
 function validate(req) {
   if (!req.body.appKey || req.body.appKey.trim().length == 0) {
-    throw "Consumer key can't be empty";
+    throw {
+      english: "Consumer key can't be empty",
+      arabic: "الحقل الأول يجب ألا يكون فارغا",
+    };
   }
   if (!req.body.appSecret || req.body.appSecret.trim().length == 0) {
-    throw "Consumer secret key can't be empty";
+    throw {
+      english: "Consumer secret key can't be empty",
+      arabic: "الحقل الثاني يجب ألا يكون فارغا",
+    };
   }
   if (!req.body.accessToken || req.body.accessToken.trim().length == 0) {
-    throw "Access token key can't be empty";
+    throw {
+      english: "Access token key can't be empty",
+      arabic: "الحقل الثالث يجب ألا يكون فارغا",
+    };
   }
   if (!req.body.accessSecret || req.body.accessSecret.trim().length == 0) {
-    throw "Access token secret key can't be empty";
+    throw {
+      english: "Access token secret key can't be empty",
+      arabic: "الحقل الرابع يجب ألا يكون فارغا",
+    };
   }
   if (!req.body.bearerToken || req.body.bearerToken.trim().length == 0) {
-    throw "Bearer token key can't be empty";
+    throw {
+      english: "Bearer token key can't be empty",
+      arabic: "الحقل الأخير يجب ألا يكون فارغا",
+    };
   }
 }
 
@@ -79,11 +94,18 @@ app.post("/api/tweet", async (req, res) => {
     validate(req);
     const data = getData(req);
     await checkIfUserTweeted(data);
-    res.send("تم النشر بحمدالله");
-    // res.send("Tweets have been successfully posted");
+    const response = {
+      arabic: "تم النشر بحمد الله",
+      english: "Tweets have been successfully posted",
+    };
+    res.send(response);
   } catch (e) {
     console.log("app85" + e);
-    res.status(500).send(e ? e : "something went wrong");
+    const message = {
+      arabic: "حدث خطأ ما، يرجى المحاولة لاحقا",
+      english: "Something went wrong! Please try again later.",
+    };
+    res.status(500).send(e ? e : message);
   }
 });
 
