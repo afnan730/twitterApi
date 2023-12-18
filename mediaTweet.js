@@ -75,6 +75,11 @@ const tweet = async (client, key) => {
       type: "media",
       path: "p3.jpeg",
     },
+    {
+      text: "Israeli occupation forces raids last night on the central Gaza Strip caused a massive destruction in residential buildings",
+      type: "media",
+      path: "v2.mp4",
+    },
   ];
   for (const tweet of tweets) {
     // console.log(tweet);
