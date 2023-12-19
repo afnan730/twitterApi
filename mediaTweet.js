@@ -12,17 +12,7 @@ const checkIfUserTweeted = async (data) => {
 
     console.log("checking if user in file....");
     const apiKey = data.appKey;
-    // try {
-    //   user = await rwClient.v2.me();
-    // } catch (e) {
-    //   console.log("failed to fetch user " + e);
-    //   throw e;
-    // }
-
-    // console.log(user);
-    // id = user.data.id;
-    // console.log(id);
-    // console.log(filepath);
+    
     if (await fs.existsSync(filepath)) {
       console.log("checking.....");
       const fileContent = fs.readFileSync(filepath, "utf-8");
@@ -31,7 +21,13 @@ const checkIfUserTweeted = async (data) => {
       console.log(ids);
       if (ids.includes(apiKey.toString())) {
         console.log("You have tweeted today");
-        throw "You have tweeted today";
+        const errorMessage = {
+          arabic:
+            "تحقق من حسابك في تويتر! يبدو أنك قد قمت بنشر التغريدات اليوم، يمكنك نشر التغريدات مرة فقط خلال اليوم",
+          english:
+            "Check your Twitter profile! It looks like you've tweeted today. You can post tweets once a day",
+        };
+        throw errorMessage;
       }
     } else {
       fs.writeFileSync(filepath, "", { flag: "wx" });
@@ -85,14 +81,21 @@ const tweet = async (client, key) => {
         await textTweet(tweet);
       }
     } catch (e) {
-      console.log("line70");
-      throw "تحقق من صحة المفاتيح التي أدخلتها";
+      console.log("line83");
+      throw {
+        arabic: "تحقق من صحة المفاتيح التي أدخلتها",
+        english: "Please check the validity of the keys you entered",
+      };
     }
   }
   fs.appendFileSync(filepath, key + "\n", function (err) {
     if (err) {
+      const error = {
+        arabic: "حدث خطأ ما! يرجى إعادة المحاولة لاحقا",
+        english: "Something went wrong, please try again later.",
+      };
       console.log("something went wrong while saving in file " + err.data);
-      throw err;
+      throw error;
     } else {
       console.log("It's saved!");
     }
@@ -111,12 +114,18 @@ const textTweet = async (tweet) => {
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
   } catch (error) {
+    const errorMessage = {
+      arabic:
+        "تحقق من حسابك في تويتر! يبدو أنك قد قمت بنشر التغريدات اليوم، يمكنك نشر التغريدات مرة فقط خلال اليوم",
+      english:
+        "Check your Twitter profile! It looks like you've tweeted today. You can post tweets once a day",
+    };
     console.log(error.data.detail);
     if (
       error.data.detail ==
       "You are not allowed to create a Tweet with duplicate content."
     ) {
-      throw "It looks like you've tweeted today. You can tweet once a day";
+      throw errorMessage;
     } else {
       throw error;
     }
@@ -138,11 +147,17 @@ const mediaTweet = async (tweet, client) => {
   } catch (error) {
     console.log("error while posting media ..." + error);
     console.log(error.data.detail);
+    const errorMessage = {
+      arabic:
+        "تحقق من حسابك في تويتر! يبدو أنك قد قمت بنشر التغريدات اليوم، يمكنك نشر التغريدات مرة فقط خلال اليوم",
+      english:
+        "Check your Twitter profile! It looks like you've tweeted today. You can post tweets once a day",
+    };
     if (
       error.data.detail ==
       "You are not allowed to create a Tweet with duplicate content."
     ) {
-      throw "It looks like you've tweeted today. You can tweet once a day";
+      throw errorMessage;
     } else {
       throw error;
     }
