@@ -12,17 +12,7 @@ const checkIfUserTweeted = async (data) => {
 
     console.log("checking if user in file....");
     const apiKey = data.appKey;
-    // try {
-    //   user = await rwClient.v2.me();
-    // } catch (e) {
-    //   console.log("failed to fetch user " + e);
-    //   throw e;
-    // }
-
-    // console.log(user);
-    // id = user.data.id;
-    // console.log(id);
-    // console.log(filepath);
+    
     if (await fs.existsSync(filepath)) {
       console.log("checking.....");
       const fileContent = fs.readFileSync(filepath, "utf-8");
