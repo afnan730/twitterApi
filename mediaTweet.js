@@ -32,16 +32,10 @@ const checkIfUserTweeted = async (data) => {
     } else {
       fs.writeFileSync(filepath, "", { flag: "wx" });
     }
-    try {
-      const client = new TwitterApi(data);
-      console.log("twitter client created");
-      rwClient = client.readWrite;
-    } catch (e) {
-      throw {
-        arabic: "تحقق من صحة المفاتيح التي أدخلتها",
-        english: "Please check the validity of the keys you entered",
-      };
-    }
+
+    const client = new TwitterApi(data);
+    console.log("twitter client created");
+    rwClient = client.readWrite;
 
     try {
       console.log("trying to tweet.......");
