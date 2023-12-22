@@ -12,7 +12,7 @@ const checkIfUserTweeted = async (data) => {
 
     console.log("checking if user in file....");
     const apiKey = data.appKey;
-    
+
     if (await fs.existsSync(filepath)) {
       console.log("checking.....");
       const fileContent = fs.readFileSync(filepath, "utf-8");
@@ -32,16 +32,28 @@ const checkIfUserTweeted = async (data) => {
     } else {
       fs.writeFileSync(filepath, "", { flag: "wx" });
     }
-    const client = new TwitterApi(data);
-    console.log("twitter client created");
-    rwClient = client.readWrite;
+    try {
+      const client = new TwitterApi(data);
+      console.log("twitter client created");
+      rwClient = client.readWrite;
+    } catch (e) {
+      throw {
+        arabic: "تحقق من صحة المفاتيح التي أدخلتها",
+        english: "Please check the validity of the keys you entered",
+      };
+    }
+
     try {
       console.log("trying to tweet.......");
       await tweet(client, apiKey);
       console.log("completed.......");
     } catch (e) {
       console.log("line39" + e);
-      throw e;
+      const message = {
+        arabic: "حدث خطأ ما، يرجى المحاولة لاحقا",
+        english: "Something went wrong! Please try again later.",
+      };
+      throw message;
     }
   } catch (e) {
     console.log("line43" + e);
@@ -51,49 +63,45 @@ const checkIfUserTweeted = async (data) => {
 const tweet = async (client, key) => {
   const tweets = [
     {
-      path: "v4.mp4",
-      text: "Attempt to rescue a young man from under the rubble of a house bombed by the occupation in the Beshara neighborhood in Deir al-Balah, central Gaza Strip, this evening.",
+      path: "v1.mp4",
+      text: "In all the laws of humanity, resistance to the occupier was an honor. The Zionist entity is trying to overturn moral standards. It wants to kill and terrorize people, and portray to the world that those who resist are terrorists.#Christmas #Trump New Year.",
       type: "media",
     },
     {
       path: "66.jpeg",
-      text: " 14 YEAR OLD YAZEN LOST 3 LIMBS FROM ISRAELI BOMBING",
+      text: " 14 YEAR OLD YAZEN LOST 3 LIMBS FROM ISRAELI BOMBING #Christmas #Trump New Year",
       type: "media",
     },
     {
-      text: "Hamas treated their prisoners well. They even exchanged their goodbyes W a contentement's smiles.This is the true tolerant face of Islam.",
-      type: "media",
-      path: "p3.jpeg",
-    },
-    {
-      text: "Israeli occupation forces raids last night on the central Gaza Strip caused a massive destruction in residential buildings",
+      text: "According to the UN charter #51, Israel doesn't have the right to self-defense against Palestinians as it occupies their land.#Christmas #Trump New Year",
       type: "media",
       path: "v2.mp4",
     },
     {
-      text: "The Ministry of Health says Donia Abu Mohsen was supposed to be sent to Egypt tomorrow to get treatment there. However, an Israeli shelling on Nasser Hospital killed her two days ago. #Gaza ",
-      type: "media",
-      path: "v6.mp4",
-    },
-    {
-      text: "Scenes from shelter camps in the south of the #Gaza Strip",
-      type: "media",
-      path: "v5.mp4",
-    },
-    {
-      text: "#BREAKING| Israeli forces detonate a house in the village of Aqraba in the #WestBank city of #Nablus.",
-      type: "media",
-      path: "v1.mp4",
-    },
-    {
-      text: "The first moments of the Israeli occupation forces bombing of a house in Rafah last night",
+      text: "You can't achieve peace with an apartheid antity that would do anything to steal your land,torture,murder,destruction,etc. The 2 states solution is the only clear path to peace.#Christmas #Trump New Year",
       type: "media",
       path: "v3.mp4",
     },
     {
-      text: "The mass destruction in homes for the Zorob family in Rafah, south of the Gaza Strip, after the Israeli occupation heavily bombed the area last night.",
+      text: "The land of Palestine was never  desert, but rather an inhabited land with villages inhabited by people and communities of Muslims, Christians, and Jews, until Zionism came and decided to carry out ethnic cleansing and take their place.#Christmas #Trump New Year",
       type: "media",
-      path: "p3.jpg",
+      path: "v4.mp4",
+    },
+
+    {
+      text: "Resistance forced the occupation to withdraw its strongest brigade, the Golani's. This limited resources & basic resistance astonished the world with its military tactics & abilities & managed to destroy the myth of a strong and very advanced army.#Christmas #Trump New Year",
+      type: "media",
+      path: "p3.jpeg",
+    },
+    {
+      text: "Netanyahu promised freeing the hostages & resistance's elimination. 2+ months in & all he did is innocents' madsacre. Resistance forced their best brigade to withdraw. Israel is eager to have a truce, but it wants to keep its undefeatable image as well.#Christmas #Trump New Year",
+      type: "media",
+      path: "p1.jpeg",
+    },
+    {
+      text: "إن كان لواء غولاني هو أقوى الألوية، فسحبه من المعركة يضعنا أمام احتمالين: إما أنه قوي بالفعل؛ لكن المقاومة أثبتت أنها أقوى منه ميدانيا، وإما أنه أُعطِي مكانة لا يستحقها، وهذا يعني أن بقية الألوية والفرق هشة، وسيتم سحبها قريبا. #النصر_الاتفاق #يوم_الجمعه #محمد #غزه_تستغيث.",
+      type: "media",
+      path: "p4.jpeg",
     },
   ];
   for (const tweet of tweets) {
@@ -107,10 +115,7 @@ const tweet = async (client, key) => {
       }
     } catch (e) {
       console.log("line83");
-      throw {
-        arabic: "تحقق من صحة المفاتيح التي أدخلتها",
-        english: "Please check the validity of the keys you entered",
-      };
+      throw "Something went wrong! " + e;
     }
   }
   fs.appendFileSync(filepath, key + "\n", function (err) {
@@ -137,7 +142,7 @@ const textTweet = async (tweet) => {
   try {
     await rwClient.v2.tweet(tweet.text);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
   } catch (error) {
     const errorMessage = {
       arabic:
@@ -168,7 +173,7 @@ const mediaTweet = async (tweet, client) => {
       media: { media_ids: [mediaId] },
     });
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
   } catch (error) {
     console.log("error while posting media ..." + error);
     console.log(error.data.detail);

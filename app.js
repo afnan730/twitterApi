@@ -95,8 +95,10 @@ app.post("/api/tweet", async (req, res) => {
     const data = getData(req);
     await checkIfUserTweeted(data);
     const response = {
-      arabic: "تم النشر بحمد الله",
-      english: "Tweets have been successfully posted",
+      arabic:
+        ".تم النشر بحمد الله. تحقق من حسابك على تويتر لمشاهدة التغريدات التي نشرتها",
+      english:
+        "Tweets have been successfully posted, check your Twitter profile to see the tweets.",
     };
     res.send(response);
   } catch (e) {
