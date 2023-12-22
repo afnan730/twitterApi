@@ -136,7 +136,7 @@ const textTweet = async (tweet) => {
   try {
     await rwClient.v2.tweet(tweet.text);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
   } catch (error) {
     const errorMessage = {
       arabic:
@@ -167,7 +167,7 @@ const mediaTweet = async (tweet, client) => {
       media: { media_ids: [mediaId] },
     });
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
   } catch (error) {
     console.log("error while posting media ..." + error);
     console.log(error.data.detail);
