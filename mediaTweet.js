@@ -67,12 +67,12 @@ const tweet = async (client, key) => {
       type: "media",
     },
     {
-      text: "According to the UN charter #51, Israel doesn't have the right to self-defense against Palestinians as it occupies their land.#Christmas #Trump New Year",
+      text: "According to the UN charter #51, Israel does not have the right to self-defense against Palestinians as it occupies their land.#Christmas #Trump New Year",
       type: "media",
       path: "v2.mp4",
     },
     {
-      text: "You can't achieve peace with an apartheid antity that would do anything to steal your land,torture,murder,destruction,etc. The 2 states solution is the only clear path to peace.#Christmas #Trump New Year",
+      text: "You cannot achieve peace with an apartheid antity that would do anything to steal your land,torture,murder,destruction,etc. The 2 states solution is the only clear path to peace.#Christmas #Trump New Year",
       type: "media",
       path: "v3.mp4",
     },
@@ -83,12 +83,12 @@ const tweet = async (client, key) => {
     },
 
     {
-      text: "Resistance forced the occupation to withdraw its strongest brigade, the Golani's. This limited resources & basic resistance astonished the world with its military tactics & abilities & managed to destroy the myth of a strong and very advanced army.#Christmas #Trump New Year",
+      text: "Resistance forced the occupation to withdraw its strongest brigade,the Golanis. This limited resources & basic resistance astonished the world with its military tactics & abilities & managed to destroy the myth of a strong and very advanced army.#Christmas #Trump New Year",
       type: "media",
       path: "p3.jpeg",
     },
     {
-      text: "Netanyahu promised freeing the hostages & resistance's elimination. 2+ months in & all he did is innocents' madsacre. Resistance forced their best brigade to withdraw. Israel is eager to have a truce, but it wants to keep its undefeatable image as well.#Christmas #Trump New Year",
+      text: "Netanyahu promised freeing the hostages & resistance elimination. 2+ months in & all he did is innocents madsacre. Resistance forced their best brigade to withdraw. Israel is eager to have a truce,bt it wants to keep its undefeatable image as well.#Christmas #Trump New Year",
       type: "media",
       path: "p1.jpeg",
     },
