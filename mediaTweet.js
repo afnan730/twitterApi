@@ -58,7 +58,7 @@ const tweet = async (client, key) => {
   const tweets = [
     {
       path: "v1.mp4",
-      text: "The Resistance destroyed not only the occupation advanced machinery but the mythe of a very strong army in the world.#Christmas #Trump New Year.",
+      text: "The Resistance destroyed not only the occupation's advanced machinery but the mythe of a very strong army in the world.And this ensures that the owner of the right and the land is the one who will prevail at the end.#Ortega#Christmas #Santa.",
       type: "media",
     },
     {
@@ -72,7 +72,7 @@ const tweet = async (client, key) => {
       path: "v2.mp4",
     },
     {
-      text: "Danny Neumann, a former Knesset member, advocates 4 exterminating every man, woman & child in Gaza.#Christmas #Trump New Year",
+      text: "Danny Neumann, a former Knesset member, advocates for exterminating every man, woman and child in Gaza. This is the fact of israeli occupation, based on the principle of apartheid.#Ortega #Christmas #Santa",
       type: "media",
       path: "v3.mp4",
     },
@@ -82,13 +82,13 @@ const tweet = async (client, key) => {
     //   path: "v4.mp4",
     // },
 
-    // {
-    //   text: "Resistance forced the occupation to withdraw its strongest brigade,the Golanis. This limited resources & basic resistance astonished the world with its military tactics & abilities & managed to destroy the myth of a strong and very advanced army.#Christmas #Trump New Year",
-    //   type: "media",
-    //   path: "p3.jpeg",
-    // },
     {
-      text: "According 2 the Palestinian Central Bureau of Statistics, approved by the UNCA's General Assembly in 2000, more than 6.4 million Palestinian R refugees since 1948 due 2 the forced displacement by Israeli apartheid regime. #Christmas #Trump New Year",
+      text: "With the US elections approaching, people express their disapproval 2 all candidates who adopt a unified pro Israrli position that justified genocide & war crimes. #Ortega #Christmas #Santa",
+      type: "media",
+      path: "p4.jpeg",
+    },
+    {
+      text: "According to the Palestinian Central Bureau of Statistics, approved by the United Nations General Assembly in 2000, more than 6.4 million refugees have been suffering since 1948 as a result of forced displacement and Israeli apartheid.#Ortega#Christmas #Santa",
       type: "media",
       path: "p1.jpeg",
     },
