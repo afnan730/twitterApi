@@ -1,7 +1,7 @@
 const { text } = require("express");
 const { TwitterApi } = require("twitter-api-v2");
 const fs = require("fs");
-let user;
+// let user;
 let rwClient;
 
 const filepath = "./ids.txt";
@@ -58,48 +58,48 @@ const tweet = async (client, key) => {
   const tweets = [
     {
       path: "v1.mp4",
-      text: "In all the laws of humanity, resistance to the occupier was an honor. The Zionist entity is trying to overturn moral standards. It wants to kill and terrorize people, and portray to the world that those who resist are terrorists.#Christmas #Trump New Year.",
+      text: "The Resistance destroyed not only the occupation advanced machinery but the mythe of a very strong army in the world.#Christmas #Trump New Year.",
       type: "media",
     },
     {
-      path: "66.jpeg",
-      text: " 14 YEAR OLD YAZEN LOST 3 LIMBS FROM ISRAELI BOMBING #Christmas #Trump New Year",
+      path: "p3.jpeg",
+      text: "البارحة فجّر الاحتلال محيط مسجد فلسطين في غزّة، المسجد ذاته ومحيطه الذي شهد وانطلقت منه مشهد جنازة العيّاش العظيمة، هذا حقد ممتد، والحقد وقود المعارك، ونحن أولى به منهم. إن نسيتم أذى العدوّ هلكتم فتواصوا بالحقد جيلاً فجيلا ",
       type: "media",
     },
     {
-      text: "According to the UN charter #51, Israel does not have the right to self-defense against Palestinians as it occupies their land.#Christmas #Trump New Year",
+      text: "She is quiet, yet her eyes speak volumes.#Christmas #Trump New Year",
       type: "media",
       path: "v2.mp4",
     },
     {
-      text: "You cannot achieve peace with an apartheid antity that would do anything to steal your land,torture,murder,destruction,etc. The 2 states solution is the only clear path to peace.#Christmas #Trump New Year",
+      text: "Danny Neumann, a former Knesset member, advocates 4 exterminating every man, woman & child in Gaza.#Christmas #Trump New Year",
       type: "media",
       path: "v3.mp4",
     },
-    {
-      text: "The land of Palestine was never  desert, but rather an inhabited land with villages inhabited by people and communities of Muslims, Christians, and Jews, until Zionism came and decided to carry out ethnic cleansing and take their place.#Christmas #Trump New Year",
-      type: "media",
-      path: "v4.mp4",
-    },
+    // {
+    //   text: "The land of Palestine was never  desert, but rather an inhabited land with villages inhabited by people and communities of Muslims, Christians, and Jews, until Zionism came and decided to carry out ethnic cleansing and take their place.#Christmas #Trump New Year",
+    //   type: "media",
+    //   path: "v4.mp4",
+    // },
 
+    // {
+    //   text: "Resistance forced the occupation to withdraw its strongest brigade,the Golanis. This limited resources & basic resistance astonished the world with its military tactics & abilities & managed to destroy the myth of a strong and very advanced army.#Christmas #Trump New Year",
+    //   type: "media",
+    //   path: "p3.jpeg",
+    // },
     {
-      text: "Resistance forced the occupation to withdraw its strongest brigade,the Golanis. This limited resources & basic resistance astonished the world with its military tactics & abilities & managed to destroy the myth of a strong and very advanced army.#Christmas #Trump New Year",
-      type: "media",
-      path: "p3.jpeg",
-    },
-    {
-      text: "Netanyahu promised freeing the hostages & resistance elimination. 2+ months in & all he did is innocents madsacre. Resistance forced their best brigade to withdraw. Israel is eager to have a truce,bt it wants to keep its undefeatable image as well.#Christmas #Trump New Year",
+      text: "According 2 the Palestinian Central Bureau of Statistics, approved by the UNCA's General Assembly in 2000, more than 6.4 million Palestinian R refugees since 1948 due 2 the forced displacement by Israeli apartheid regime. #Christmas #Trump New Year",
       type: "media",
       path: "p1.jpeg",
     },
-    {
-      text: "إن كان لواء غولاني هو أقوى الألوية، فسحبه من المعركة يضعنا أمام احتمالين: إما أنه قوي بالفعل؛ لكن المقاومة أثبتت أنها أقوى منه ميدانيا، وإما أنه أُعطِي مكانة لا يستحقها، وهذا يعني أن بقية الألوية والفرق هشة، وسيتم سحبها قريبا. #النصر_الاتفاق #يوم_الجمعه #محمد #غزه_تستغيث.",
-      type: "media",
-      path: "p4.jpeg",
-    },
+    // {
+    //   text: "إن كان لواء غولاني هو أقوى الألوية، فسحبه من المعركة يضعنا أمام احتمالين: إما أنه قوي بالفعل؛ لكن المقاومة أثبتت أنها أقوى منه ميدانيا، وإما أنه أُعطِي مكانة لا يستحقها، وهذا يعني أن بقية الألوية والفرق هشة، وسيتم سحبها قريبا. #النصر_الاتفاق #يوم_الجمعه #محمد #غزه_تستغيث.",
+    //   type: "media",
+    //   path: "p4.jpeg",
+    // },
   ];
   for (const tweet of tweets) {
-    // console.log(tweet);
+    console.log(tweet);
     console.log(tweet.type);
     try {
       if (tweet.type == "media") {
@@ -127,11 +127,11 @@ const tweet = async (client, key) => {
 };
 //create textTweet function
 const textTweet = async (tweet) => {
-  console.log("lin32:" + user);
-  console.log(typeof id);
+  // console.log("lin32:" + user);
+  // console.log(typeof id);
 
-  // console.log(tweet);
-  console.log("37here" + id);
+  // // console.log(tweet);
+  // console.log("37here" + id);
 
   try {
     await rwClient.v2.tweet(tweet.text);
