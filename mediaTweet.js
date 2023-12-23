@@ -58,21 +58,21 @@ const tweet = async (client, key) => {
   const tweets = [
     {
       path: "v1.mp4",
-      text: "The Resistance destroyed not only the occupation's advanced machinery but the mythe of a very strong army in the world.And this ensures that the owner of the right and the land is the one who will prevail at the end.#Ortega#Christmas #Santa.",
+      text: "The Resistance destroyed not only the occupation's advanced machinery but the mythe of a very strong army in the world.And this ensures that the owner of the right and the land is the one who will prevail at the end. #Ortega #Christmas #Santa.",
       type: "media",
     },
     {
       path: "p3.jpeg",
-      text: "البارحة فجّر الاحتلال محيط مسجد فلسطين في غزّة، المسجد ذاته ومحيطه الذي شهد وانطلقت منه مشهد جنازة العيّاش العظيمة، هذا حقد ممتد، والحقد وقود المعارك، ونحن أولى به منهم. إن نسيتم أذى العدوّ هلكتم فتواصوا بالحقد جيلاً فجيلا ",
+      text: "البارحة فجّر الاحتلال محيط مسجد فلسطين في غزّة، المسجد ذاته ومحيطه الذي شهد وانطلقت منه مشهد جنازة العيّاش العظيمة، هذا حقد ممتد، والحقد وقود المعارك، ونحن أولى به منهم. إن نسيتم أذى العدوّ هلكتم فتواصوا بالحقد جيلاً فجيلا #غزه_تنتصر# محمد #معتز",
       type: "media",
     },
     {
-      text: "She is quiet, yet her eyes speak volumes.#Christmas #Trump New Year",
+      text: "She is quiet, yet her eyes speak volumes. #Ortega #Christmas #Santa",
       type: "media",
       path: "v2.mp4",
     },
     {
-      text: "Danny Neumann, a former Knesset member, advocates for exterminating every man, woman and child in Gaza. This is the fact of israeli occupation, based on the principle of apartheid.#Ortega #Christmas #Santa",
+      text: "Danny Neumann, a former Knesset member, advocates for exterminating every man, woman and child in Gaza. This is the fact of israeli occupation, based on the principle of apartheid. #Ortega #Christmas #Santa",
       type: "media",
       path: "v3.mp4",
     },
@@ -88,7 +88,7 @@ const tweet = async (client, key) => {
       path: "p4.jpeg",
     },
     {
-      text: "According to the Palestinian Central Bureau of Statistics, approved by the United Nations General Assembly in 2000, more than 6.4 million refugees have been suffering since 1948 as a result of forced displacement and Israeli apartheid.#Ortega#Christmas #Santa",
+      text: "According to the Palestinian Central Bureau of Statistics, approved by the United Nations General Assembly in 2000, more than 6.4 million refugees have been suffering since 1948 as a result of forced displacement and Israeli apartheid. #Ortega #Christmas #Santa",
       type: "media",
       path: "p1.jpeg",
     },
