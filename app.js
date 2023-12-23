@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 var cors = require("cors");
 var bodyParser = require("body-parser");
+const cluster = require("cluster");
+const numCPUs = require("os").cpus().length;
 
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(
@@ -89,28 +91,67 @@ function getData(req) {
 //     res.status(500).send(e);
 //   }
 // });
-app.post("/api/tweet", async (req, res) => {
-  try {
-    validate(req);
-    const data = getData(req);
-    await checkIfUserTweeted(data);
-    const response = {
-      arabic:
-        ".تم النشر بحمد الله. تحقق من حسابك على تويتر لمشاهدة التغريدات التي نشرتها",
-      english:
-        "Tweets have been successfully posted, check your Twitter profile to see the tweets.",
-    };
-    res.send(response);
-  } catch (e) {
-    console.log("app85" + e);
-    const message = {
-      arabic: "حدث خطأ ما، يرجى المحاولة لاحقا",
-      english: "Something went wrong! Please try again later.",
-    };
-    res.status(500).send(e ? e : message);
-  }
-});
+// app.post("/api/tweet", async (req, res) => {
+//   try {
+//     validate(req);
+//     const data = getData(req);
+//     await checkIfUserTweeted(data);
+//     const response = {
+//       arabic:
+//         ".تم النشر بحمد الله. تحقق من حسابك على تويتر لمشاهدة التغريدات التي نشرتها",
+//       english:
+//         "Tweets have been successfully posted, check your Twitter profile to see the tweets.",
+//     };
+//     res.send(response);
+//   } catch (e) {
+//     console.log("app85" + e);
+//     const message = {
+//       arabic: "حدث خطأ ما، يرجى المحاولة لاحقا",
+//       english: "Something went wrong! Please try again later.",
+//     };
+//     res.status(500).send(e ? e : message);
+//   }
+// });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+if (cluster.isMaster) {
+  // Fork workers
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+  }
+
+  cluster.on("exit", (worker, code, signal) => {
+    console.log(`Worker ${worker.process.pid} died`);
+    // Fork a new worker to replace the dead one
+    cluster.fork();
+  });
+} else {
+  // Worker process code
+
+  // Your existing code
+
+  app.post("/api/tweet", async (req, res) => {
+    try {
+      validate(req);
+      const data = getData(req);
+      await checkIfUserTweeted(data);
+      const response = {
+        arabic:
+          ".تم النشر بحمد الله. تحقق من حسابك على تويتر لمشاهدة التغريدات التي نشرتها",
+        english:
+          "Tweets have been successfully posted, check your Twitter profile to see the tweets.",
+      };
+      res.send(response);
+    } catch (e) {
+      console.log("app85" + e);
+      const message = {
+        arabic: "حدث خطأ ما، يرجى المحاولة لاحقا",
+        english: "Something went wrong! Please try again later.",
+      };
+      res.status(500).send(e ? e : message);
+    }
+  });
+
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+  });
+}
