@@ -58,45 +58,50 @@ const tweet = async (client, key) => {
   const tweets = [
     {
       path: "v1.mp4",
-      text: "The Resistance destroyed not only the occupation's advanced machinery but the mythe of a very strong army in the world.And this ensures that the owner of the right and the land is the one who will prevail at the end. #Ortega #Christmas #Santa.",
+      text: "\"I'll remain steadfast on my land,ready to defend till the last drop of my blood\" She isn't just a little girl;she represents all Palestinians steadfast in protecting their homeland until the very last drop of their blood. #Chelsea #Christmas #Sterling #Santa #Wilde",
       type: "media",
     },
     {
       path: "p3.jpeg",
-      text: "البارحة فجّر الاحتلال محيط مسجد فلسطين في غزّة، المسجد ذاته ومحيطه الذي شهد وانطلقت منه مشهد جنازة العيّاش العظيمة، هذا حقد ممتد، والحقد وقود المعارك، ونحن أولى به منهم. إن نسيتم أذى العدوّ هلكتم فتواصوا بالحقد جيلاً فجيلا #غزه_تنتصر# محمد #معتز",
+      text: "احفظوا الشركات التي تظهر أسماؤها مطبوعة على مأكولات أو مشروبات بأيدي الجنود الصهاينة أو على طاولات الساسة، وعاقبوها بالمقاطعة. أروهم قوة سلاحنا الذي يستهينوا به. اجعلوا تجاراتهم تنهار عليهم كما جعلوا غزة تنهار على ساكنيها.#غزه_تنتصر#Chelsea #Christmas #Liverpool",
       type: "media",
     },
     {
-      text: "She is quiet, yet her eyes speak volumes. #Ortega #Christmas #Santa",
+      text: "Look out 4 all food/beverage companies that the occupation's soldiers & world politicians appear consuming/holding. Boycot is the answer 2 their arrogance & underestimatation of the mass power. Hit them where it hurts: their pockets #Chelsea #Christmas #Sterling #Santa #Wilde",
       type: "media",
       path: "v2.mp4",
     },
     {
-      text: "Danny Neumann, a former Knesset member, advocates for exterminating every man, woman and child in Gaza. This is the fact of israeli occupation, based on the principle of apartheid. #Ortega #Christmas #Santa",
+      text: "Gaza's situation's disastrous: lack of infrastructure,healthcare,life necessities & people R killed,injured&kidnapped. Moreover,civilians suffer from pollution due 2 bombing&diseases due 2 lack of water. Urgent ceasefire's a must. #Chelsea #Christmas #Sterling #Santa",
       type: "media",
       path: "v3.mp4",
     },
-    // {
-    //   text: "The land of Palestine was never  desert, but rather an inhabited land with villages inhabited by people and communities of Muslims, Christians, and Jews, until Zionism came and decided to carry out ethnic cleansing and take their place.#Christmas #Trump New Year",
-    //   type: "media",
-    //   path: "v4.mp4",
-    // },
+    {
+      text: 'Resistance recycle bombs debris and turned them into weapons used in their defense against the occupation\'s soldiers"Resistance is giving them a taste of their own medicine" #Chelsea #Christmas #Sterling #Santa #Wilder',
+      type: "media",
+      path: "p1.jpeg",
+    },
 
     {
-      text: "With the US elections approaching, people express their disapproval 2 all candidates who adopt a unified pro Israrli position that justified genocide & war crimes. #Ortega #Christmas #Santa",
+      text: "The major world players have to stop providing immunity to Israeli occupations. This political protection made it 'an above law' entity & allowed it to torture Palestinians, steal their land, kill & displace them for over 75 years. #Chelsea #Christmas #Sterling #Santa #Wilder",
       type: "media",
       path: "p4.jpeg",
     },
     {
-      text: "According to the Palestinian Central Bureau of Statistics, approved by the United Nations General Assembly in 2000, more than 6.4 million refugees have been suffering since 1948 as a result of forced displacement and Israeli apartheid. #Ortega #Christmas #Santa",
+      text: "Khaled story,The Soul of My Soul, touches millions of hearts worldwide. People memorize his late granddaughter & his BD &send him their best wishes. He helped correct the global misconception of Islam &show how tolerant & noble it is.#Chelsea #Christmas #Sterling #Santa #Wilder",
       type: "media",
-      path: "p1.jpeg",
+      path: "v4.mp4",
     },
-    // {
-    //   text: "إن كان لواء غولاني هو أقوى الألوية، فسحبه من المعركة يضعنا أمام احتمالين: إما أنه قوي بالفعل؛ لكن المقاومة أثبتت أنها أقوى منه ميدانيا، وإما أنه أُعطِي مكانة لا يستحقها، وهذا يعني أن بقية الألوية والفرق هشة، وسيتم سحبها قريبا. #النصر_الاتفاق #يوم_الجمعه #محمد #غزه_تستغيث.",
-    //   type: "media",
-    //   path: "p4.jpeg",
-    // },
+    {
+      text: "إن كان لواء غولاني هو أقوى الألوية، فسحبه من المعركة يضعنا أمام احتمالين: إما أنه قوي بالفعل؛ لكن المقاومة أثبتت أنها أقوى منتعيد المقاومة تصنيع الأسلحة التي تتساقط على غزة ولا تنفجر، فتضرب بها الصهاينة بعد أن تردها للخدمة بطريقة أفضل مما كانت عليه وهي بأيديهم، فيُقتَلون بأسلحتهم التي قتلوا بها الأبرياء ظلما، مغلفة بعبارة: ذوقوا من نفس الكأس الذي تجرعونه غيركم. #غزه_تنتصر #Chelsea #Christmas #Liverpool",
+      type: "media",
+      path: "66.jpeg",
+    },
+    {
+      text: "إن من يمسك مقود المفاوضات والسيطرة الميدانية هو المنتصر، والواقع يخبرنا أن المقاومة متمسكة بشروطها، وتجبر الأطراف على قبولها وعلى رأسها وقف الحرب كليا، ثم تبييض السجون الصهيونية، وإعادة إعمار غزة، في حين يتنازل الصهاينة عن شروطهم تدريجيا. #غزه_تنتصر #Chelsea #Christmas #Liverpool",
+      type: "media",
+      path: "p5.jpeg",
+    },
   ];
   for (const tweet of tweets) {
     console.log(tweet);
