@@ -98,6 +98,13 @@ const tweet = async (client, key) => {
       type: "media",
       path: "66.jpeg",
     },
+    
+     {
+          text: "Killed, with 2 shots, only because he stood up against the genocide. However, truth will always be louder no matter what criminals do to silence it.#Chelsea #Christmas #Sterling #Santa #Wilder",
+          type: "image",
+          src: k1,
+        },
+        
     {
       text: "إن من يمسك مقود المفاوضات والسيطرة الميدانية هو المنتصر، والواقع يخبرنا أن المقاومة متمسكة بشروطها، وتجبر الأطراف على قبولها وعلى رأسها وقف الحرب كليا، ثم تبييض السجون الصهيونية، وإعادة إعمار غزة، في حين يتنازل الصهاينة عن شروطهم تدريجيا. #غزه_تنتصر #Chelsea #Christmas #Liverpool",
       type: "media",
