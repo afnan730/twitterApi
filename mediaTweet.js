@@ -95,7 +95,7 @@ const tweet = async (client, key) => {
     {
       text: "Killed, with 2 shots, only because he stood up against the genocide. However, truth will always be louder no matter what criminals do to silence it. #Chelsea #Christmas #Sterling #Santa #Wilder",
       type: "media",
-      path: "p0.jpeg",
+      path: "p7.jpeg",
     },
     {
       text: "إن كان لواء غولاني هو أقوى الألوية، فسحبه من المعركة يضعنا أمام احتمالين: إما أنه قوي بالفعل؛ لكن المقاومة أثبتت أنها أقوى منتعيد المقاومة تصنيع الأسلحة التي تتساقط على غزة ولا تنفجر، فتضرب بها الصهاينة بعد أن تردها للخدمة بطريقة أفضل مما كانت عليه وهي بأيديهم، فيُقتَلون بأسلحتهم التي قتلوا بها الأبرياء ظلما، مغلفة بعبارة: ذوقوا من نفس الكأس الذي تجرعونه غيركم. #غزه_تنتصر #Chelsea #Christmas #Liverpool",
