@@ -57,58 +57,46 @@ const checkIfUserTweeted = async (data) => {
 const tweet = async (client, key) => {
   const tweets = [
     {
-      path: "v1.mp4",
-      text: "\"I'll remain steadfast on my land,ready to defend till the last drop of my blood\" She isn't just a little girl;she represents all Palestinians steadfast in protecting their homeland until the very last drop of their blood. #Chelsea #Christmas #Sterling #Santa #Wilde",
+      path: "i1.jpeg",
+      text: "According 2 the Palestinian Prisoner's Society, 4695 were detained since  October 7th in the West Bank & the raids R still going on, during  which whole families R threatened &some of their members R severely  beaten #Inoue Boxing Day #Christmas",
       type: "media",
     },
     {
-      path: "p3.jpeg",
-      text: "احفظوا الشركات التي تظهر أسماؤها مطبوعة على مأكولات أو مشروبات بأيدي الجنود الصهاينة أو على طاولات الساسة، وعاقبوها بالمقاطعة. أروهم قوة سلاحنا الذي يستهينوا به. اجعلوا تجاراتهم تنهار عليهم كما جعلوا غزة تنهار على ساكنيها.#غزه_تنتصر#Chelsea #Christmas #Liverpool",
+      path: "i3.jpeg",
+      text: "تعيد المقاومة تصنيع الأسلحة التي تتساقط على غزة ولا تنفجر، فتضرب بها الصهاينة بعد أن تردها للخدمة بطريقة أفضل مما كانت عليه وهي بأيديهم، فيُقتَلون بأسلحتهم التي قتلوا بها الأبرياء ظلما، مغلفة بعبارة: ذوقوا من نفس الكأس الذي تجرعونه غيركم.#رساله_اليوم #غزه_تنتصر #Christma",
       type: "media",
     },
     {
-      text: "Look out 4 all food/beverage companies that the occupation's soldiers & world politicians appear consuming/holding. Boycot is the answer 2 their arrogance & underestimatation of the mass power. Hit them where it hurts: their pockets #Chelsea #Christmas #Sterling #Santa #Wilde",
+      text: "If you still believe that the occupying entity Israel is 'the only democratic country in the Middle East' please listen to this.#Inoue Boxing Day #Christma",
       type: "media",
-      path: "v2.mp4",
+      path: "video3.mp4",
     },
     {
-      text: "Gaza's situation's disastrous: lack of infrastructure,healthcare,life necessities & people R killed,injured&kidnapped. Moreover,civilians suffer from pollution due 2 bombing&diseases due 2 lack of water. Urgent ceasefire's a must. #Chelsea #Christmas #Sterling #Santa",
+      text: "إسرائيل تعتقل أكثر من 4695 فلسطينيا في الضفة الغربية، منذ 7 أكتوبر، وفق آخر الإحصائيات الرسمية الصادرة عن جمعية نادي الأسير الفلسطيني، وتواصل عمليات الاقتحام وتهديد العوائل والضرب المبرّح وعمليات التنكيل الواسعة خلال الاعتقال.#رساله_اليوم #غزه_تنتصر #Christma",
       type: "media",
-      path: "v3.mp4",
+      path: "i1.jpeg",
     },
     {
-      text: 'Resistance recycle bombs debris and turned them into weapons used in their defense against the occupation\'s soldiers"Resistance is giving them a taste of their own medicine" #Chelsea #Christmas #Sterling #Santa #Wilder',
+      text: "After only 6 hrs of traveling from Jerusalem to Ramallah & witnessing  the apartheid regime's treatment 2 Palestinians,this is his answer when asked about his reaction if he were to endure what they've been suffering 4 decades #Inoue Boxing Day #Christma",
       type: "media",
-      path: "p1.jpeg",
-    },
-
-    {
-      text: "The major world players have to stop providing immunity to Israeli occupations. This political protection made it 'an above law' entity & allowed it to torture Palestinians, steal their land, kill & displace them for over 75 years. #Chelsea #Christmas #Sterling #Santa #Wilder",
-      type: "media",
-      path: "p4.jpeg",
-    },
-    {
-      text: "Khaled story,The Soul of My Soul,touches millions of hearts worldwide. People memorize his late granddaughter & his BD &send him their best wishes. He helped correct the global misconception of Islam &show how tolerant & noble it is. #Chelsea #Christmas #Sterling #Santa #Wilder",
-      type: "media",
-      path: "v4.mp4",
+      path: "video12.mp4",
     },
 
     {
-      text: "إن كان لواء غولاني هو أقوى الألوية، فسحبه من المعركة يضعنا أمام احتمالين: إما أنه قوي بالفعل؛ لكن المقاومة أثبتت أنها أقوى منتعيد المقاومة تصنيع الأسلحة التي تتساقط على غزة ولا تنفجر، فتضرب بها الصهاينة بعد أن تردها للخدمة بطريقة أفضل مما كانت عليه وهي بأيديهم، فيُقتَلون بأسلحتهم التي قتلوا بها الأبرياء ظلما، مغلفة بعبارة: ذوقوا من نفس الكأس الذي تجرعونه غيركم. #غزه_تنتصر #Chelsea #Christmas #Liverpool",
+      text: "Western influencers use holidays 2 raise awareness about Zionist actions in Palestine, urging continued boycotts that effectively pressure rule-breakers, & enforce some brands to close some branches,change their names or back down! #Inoue Boxing Day #Christma",
       type: "media",
-      path: "66.jpeg",
+      path: "video2.mp4",
     },
-    
-     // {
-     //      text: "Killed, with 2 shots, only because he stood up against the genocide. However, truth will always be louder no matter what criminals do to silence it.#Chelsea #Christmas #Sterling #Santa #Wilder",
-     //      type: "image",
-     //      src: k1,
-     //    },
-        
     {
-      text: "إن من يمسك مقود المفاوضات والسيطرة الميدانية هو المنتصر، والواقع يخبرنا أن المقاومة متمسكة بشروطها، وتجبر الأطراف على قبولها وعلى رأسها وقف الحرب كليا، ثم تبييض السجون الصهيونية، وإعادة إعمار غزة، في حين يتنازل الصهاينة عن شروطهم تدريجيا. #غزه_تنتصر #Chelsea #Christmas #Liverpool",
+      text: "These war crimes occurred moments after Biden's announcement that he didn't request a ceasefire,& a few weeks ago,the U.S also vetoed against a ceasefire. What Gazans endure is a genocide by American weapons,while the UN & the whole world is watching #Inoue Boxing Day #Christma",
       type: "media",
-      path: "p5.jpeg",
+      path: "i2.jpeg",
+    },
+
+    {
+      text: "After 80+ days of continuous bombardment of civilians, Gazans either killed,  injured, or homeless facing the threat of death from bombs,infectious diseases,starvation, etc. How much must they endure before the world may react? #Inoue Boxing Day #Christmas",
+      type: "media",
+      path: "i4.jpeg",
     },
   ];
   for (const tweet of tweets) {
