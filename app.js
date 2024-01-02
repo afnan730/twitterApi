@@ -143,6 +143,7 @@ if (cluster.isMaster) {
       res.send(response);
     } catch (e) {
       console.log("app85" + e);
+      console.log(e);
       const message = {
         arabic: "حدث خطأ ما، يرجى المحاولة لاحقا",
         english: "Something went wrong! Please try again later.",

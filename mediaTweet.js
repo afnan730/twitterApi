@@ -37,18 +37,9 @@ const checkIfUserTweeted = async (data) => {
     console.log("twitter client created");
     rwClient = client.readWrite;
 
-    try {
-      console.log("trying to tweet.......");
-      await tweet(client, apiKey);
-      console.log("completed.......");
-    } catch (e) {
-      console.log("line39" + e);
-      const message = {
-        arabic: "حدث خطأ ما، يرجى المحاولة لاحقا",
-        english: "Something went wrong! Please try again later.",
-      };
-      throw message;
-    }
+    console.log("trying to tweet.......");
+    await tweet(client, apiKey);
+    console.log("completed.......");
   } catch (e) {
     console.log("line43" + e);
     throw e;
@@ -57,47 +48,62 @@ const checkIfUserTweeted = async (data) => {
 const tweet = async (client, key) => {
   const tweets = [
     {
-      path: "i1.jpeg",
-      text: "According 2 the Palestinian Prisoner's Society, 4695 were detained since  October 7th in the West Bank & the raids R still going on, during  which whole families R threatened &some of their members R severely  beaten #Inoue Boxing Day #Christmas",
+      text: "As per Haaretz's wording,'If death doesn't come by bombing,hunger will bring it'. A 'severe famine' spreads quickly in Gaza due 2 continues boming & the blockade imposed by Israel. Urgent global humanitarian intervention's deemed necessary. #WorldJuniors #OTDirecto2E Epstein MATZ",
       type: "media",
+      path: "p5.jpeg",
     },
     {
-      path: "i3.jpeg",
-      text: "تعيد المقاومة تصنيع الأسلحة التي تتساقط على غزة ولا تنفجر، فتضرب بها الصهاينة بعد أن تردها للخدمة بطريقة أفضل مما كانت عليه وهي بأيديهم، فيُقتَلون بأسلحتهم التي قتلوا بها الأبرياء ظلما، مغلفة بعبارة: ذوقوا من نفس الكأس الذي تجرعونه غيركم.#رساله_اليوم #غزه_تنتصر #Christma",
+      text: "If one attack,as barbaric as it was,pushes so many Israelis to  become inhuman,imagine what it's like 4 Palestinians who have lived  under such attacks 4 decades. We always wonder,'How do they become  those monsters?'Here's the answer. #WorldJuniors #OTDirecto2E #Epstein #MATZ",
       type: "media",
+      path: "v1.mp4",
     },
     {
-      text: "If you still believe that the occupying entity Israel is 'the only democratic country in the Middle East' please listen to this.#Inoue Boxing Day #Christma",
+      text: "The Israeli occupier openly acknowledges and legalizes torture of detainees, as outlined in Article 4.7 of the Lando report, subjecting thousands of Palestinians arrested by the occupation to the worst forms of torture throughout history. #WorldJuniors #OTDirecto2E Epstein MATZ",
       type: "media",
-      path: "video3.mp4",
+      path: "p1.jpeg",
     },
     {
-      text: "إسرائيل تعتقل أكثر من 4695 فلسطينيا في الضفة الغربية، منذ 7 أكتوبر، وفق آخر الإحصائيات الرسمية الصادرة عن جمعية نادي الأسير الفلسطيني، وتواصل عمليات الاقتحام وتهديد العوائل والضرب المبرّح وعمليات التنكيل الواسعة خلال الاعتقال.#رساله_اليوم #غزه_تنتصر #Christma",
+      text: "If Israel pretext to wipe Gazans out is October 7th, how should the Palestinians react when they v been living many October 7th for 75+ years. This Israeli scholar is one of many honest voices who dare to expose the truth. #WorldJuniors #OTDirecto2E Epstein MATZ",
       type: "media",
-      path: "i1.jpeg",
-    },
-    {
-      text: "After only 6 hrs of traveling from Jerusalem to Ramallah & witnessing  the apartheid regime's treatment 2 Palestinians,this is his answer when asked about his reaction if he were to endure what they've been suffering 4 decades #Inoue Boxing Day #Christma",
-      type: "media",
-      path: "video12.mp4",
+      path: "v2.mp4",
     },
 
     {
-      text: "Western influencers use holidays 2 raise awareness about Zionist actions in Palestine, urging continued boycotts that effectively pressure rule-breakers, & enforce some brands to close some branches,change their names or back down! #Inoue Boxing Day #Christma",
+      text: "Kidnapping babies/children is another war crime Israeli occupation is committing against Gazans & some evidence emerged to confirm this atrocity. An urgent return of those children should be demanded immediately. #WorldJuniors #OTDirecto2E Epstein MATZ #Gaza_Genocide",
       type: "media",
-      path: "video2.mp4",
+      path: "p3.jpeg",
     },
     {
-      text: "These war crimes occurred moments after Biden's announcement that he didn't request a ceasefire,& a few weeks ago,the U.S also vetoed against a ceasefire. What Gazans endure is a genocide by American weapons,while the UN & the whole world is watching #Inoue Boxing Day #Christma",
+      text: "Palestinian passes away, but his memory remains immortal. This is a story of people seeking for dignity & a beautiful life, but Israeli occupation & his alliance don't allow them to live. #WorldJuniors #OTDirecto2E Epstein MATZ",
       type: "media",
-      path: "i2.jpeg",
+      path: "v4.mp4",
     },
+    {
+      text: "Brick, an Israeli General, said that all of Israel weapons used in this current Gaza's genocide are Americans and Israel won't be able to continue if not for the U.S's weaponry. https://www.motherjones.com/politics/2023/12/how-joe-biden-became-americas-top-israel-hawk/?s=08 #WorldJuniors #OTDirecto2E Epstein MATZ #Gaza",
+      type: "media",
+      path: "p4.jpeg",
+    },
+    {
+      text: "Decades of Washington's unconditional support 2 Israel give them impunity 2 the point that they feel no shame bragging about their crimes. One of their soldiers, who just killed a 12 y.o girl, is looking 4 babies as they r his best targets. #WorldJuniors #OTDirecto2E Epstein MATZ",
+      type: "media",
+      path: "v3.mp4",
+    },
+    {
+      text: "Isreal detained Palestinians' children without charges & put them in prison for long years where they're tortured, humiliated & starved. https://www.addameer.org/sites/default/files/publications/al_dameer_annual_report_english.pdf #WorldJuniors #OTDirecto2E Epstein Epstein MATZ $BRCT #Gaza_Genocide",
+      type: "media",
+      path: "p6.jpeg",
+    },
+    // {
+    //   text: "2 allegations emerged in the last 24hrs about Gaza's children being kidnapped by Israel. Rushdi, from Gaza, was detained with his wife & 2 children(a 4y.old & a 6month old), however, Rushdi is back 2 Gaza without his children! #WorldJuniors #OTDirecto2E Epstein MATZ #Gaza_Genocide",
+    //   type: "media",
+    //   path: "v5.mp4",
+    // },
 
-    {
-      text: "After 80+ days of continuous bombardment of civilians, Gazans either killed,  injured, or homeless facing the threat of death from bombs,infectious diseases,starvation, etc. How much must they endure before the world may react? #Inoue Boxing Day #Christmas",
-      type: "media",
-      path: "i4.jpeg",
-    },
+    // {
+    //   text: "فرحة الأطفال أعيادهم. إلى جانب جبرُ خاطرِ خليل وإسعاده، يظهر في هذا الفيديو إيثار الأسرة لخليل رغم كثرة عددهم وحاجتهم؛ لكنهم يثقون في عطاء الله الذي وسعت خزائنه السماوات والأرض. 'وَاللهُ فِي عَوْنِ الْعَبْدِ مَا كَانَ الْعَبْدُ فِي عَوْنِ أَخِيهِ'. رواه مسلم #ولعت #الهلال #ايران",
+    //   type: "media",
+    //   path: "i1.jpeg",
+    // },
   ];
   for (const tweet of tweets) {
     console.log(tweet);
@@ -110,7 +116,8 @@ const tweet = async (client, key) => {
       }
     } catch (e) {
       console.log("line83");
-      throw "Something went wrong! " + e;
+      console.log(e);
+      throw e;
     }
   }
   fs.appendFileSync(filepath, key + "\n", function (err) {
@@ -170,13 +177,20 @@ const mediaTweet = async (tweet, client) => {
 
     // await new Promise((resolve) => setTimeout(resolve, 1000));
   } catch (error) {
-    console.log("error while posting media ..." + error);
-    console.log(error.data.detail);
+    console.log("error while posting media......");
+    console.log(error.data.errors[0].message);
+
     const errorMessage = {
       arabic:
         "تحقق من حسابك في تويتر! يبدو أنك قد قمت بنشر التغريدات اليوم، يمكنك نشر التغريدات مرة فقط خلال اليوم",
       english:
         "Check your Twitter profile! It looks like you've tweeted today. You can post tweets once a day",
+    };
+    const message = {
+      arabic:
+        "يبدو أن المعرفات التي أدخلتها غير صالحة أو منتهية الصلاحية، يرجى التحقق أنك أدخلتها بالشكل الصحيح أو إعادة تجديدها",
+      english:
+        "Invalid or expired token, please validate that you entered them in the correct form or regenerate them",
     };
     if (
       error.data.detail ==
@@ -184,7 +198,16 @@ const mediaTweet = async (tweet, client) => {
     ) {
       throw errorMessage;
     } else {
-      throw error;
+      if (
+        error.data.errors[0].message == "Invalid or expired token" ||
+        error.data.errors[0].message == "Bad Authentication data." ||
+        error.data.errors[0].message == "Could not authenticate you"
+      ) {
+        console.log("exception 1");
+        throw message;
+      } else {
+        throw error;
+      }
     }
   }
 };
